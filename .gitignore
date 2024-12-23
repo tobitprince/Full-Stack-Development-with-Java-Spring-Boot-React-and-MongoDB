@@ -38,4 +38,5 @@ build/
 .env.*
 *.env
 /src/main/resources/.env
-backend/src/main/resources/.env
+/backend/src/main/resources/.env
+/frontend/node_modules
