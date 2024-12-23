@@ -1,4 +1,4 @@
-package com.princetobit.movies;
+package com.princetobit.movies.model;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
