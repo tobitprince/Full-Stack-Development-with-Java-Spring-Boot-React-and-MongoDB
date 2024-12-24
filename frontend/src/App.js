@@ -41,13 +41,14 @@ function App() {
 
         setMovie(singleMovie);
 
-        setReviews(singleMovie.reviews);
+        setReviews(singleMovie.reviews || []);
 
 
     }
     catch (error)
     {
       console.error(error);
+      setReviews([]);
     }
 
   }

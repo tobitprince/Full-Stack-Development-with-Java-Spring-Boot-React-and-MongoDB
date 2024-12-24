@@ -6,7 +6,7 @@ import ReviewForm from '../reviewForm/ReviewForm';
 
 import React from 'react'
 
-const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
+const Reviews = ({getMovieData,movie,reviews = [],setReviews}) => {
 
     const revText = useRef();
     let params = useParams();
@@ -14,7 +14,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
 
     useEffect(()=>{
         getMovieData(movieId);
-    },[])
+    },[movieId, getMovieData])
 
     const addReview = async (e) =>{
         e.preventDefault();
@@ -24,7 +24,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
         try
         {
             const response = await api.post("/api/v1/reviews",{reviewBody:rev.value,imdbId:movieId});
-
+            const newReview = response.data;
             const updatedReviews = [...reviews, {body:rev.value}];
 
             rev.value = "";
@@ -68,7 +68,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
                 {
                     reviews?.map((r) => {
                         return(
-                            <>
+                            <div key={r.id}>
                                 <Row>
                                     <Col>{r.body}</Col>
                                 </Row>
@@ -77,7 +77,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
                                         <hr />
                                     </Col>
                                 </Row>
-                            </>
+                            </div>
                         )
                     })
                 }
