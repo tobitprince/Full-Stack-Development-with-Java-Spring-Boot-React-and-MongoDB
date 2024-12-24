@@ -167,8 +167,8 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-- **Your Name:** [your.email@example.com](mailto:princekiptoo@gmail.com)
-- **GitHub:** [https://github.com/yourusername](https://github.com/tobitprince)
+- **Your Name:** [princekiptoo@gmail.com](mailto:princekiptoo@gmail.com)
+- **GitHub:** [https://github.com/tobitprince](https://github.com/tobitprince)
 - **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/)
 
 ---
