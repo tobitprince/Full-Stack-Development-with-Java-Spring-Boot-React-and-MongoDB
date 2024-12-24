@@ -4,12 +4,13 @@ import api from './api/axiosConfig';
 import { useState, useEffect } from 'react';
 import Layout from './components/layout';
 import {Routes, Route} from 'react-router-dom';
+import Home from './components/home/Home';
 
 
 function App() {
   const [movies, setMovies] = useState();
 
-  const getmMovies = async () => {
+  const getMovies = async () => {
     try {
       const response = await api.get('/movies');
       console.log(response.data);
@@ -21,13 +22,14 @@ function App() {
   }
 
   useEffect(() => {
-    getmMovies();
+    getMovies();
   }, []);
   return (
     <div className="App">
 
       <Routes>
-        <Route path = "/" element = {Layout}>
+        <Route path = "/" element = {<Layout/>}>
+        <Route path= "/"  element = {<Home movies={movies}/>}></Route>
 
         </Route>
       </Routes>
